@@ -3,6 +3,15 @@ public class Main {
     static final int BOARDX = 7;
     static final int BOARDY = 15;
     public static void main(String[] args) {
+        Board b = new Board(BOARDX, BOARDY);
+        Piece p1 = new Piece(1,1,b);
+        Piece p2 = new Piece(1,2,b);
+        //b.displayAll();
+        b.placePiece(p1);
+        b.placePiece(p2);
+        b.displayAll();
+
+        /*
         System.out.println("Welcome to MEGA Connect 5!");
         System.out.println("You may choose to place one 3x3 MegaPiece");
         System.out.println();
@@ -27,7 +36,7 @@ public class Main {
             player = player % 2 + 1;
         }
 
-
+*/
 
     }
 }
