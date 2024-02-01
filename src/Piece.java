@@ -15,21 +15,21 @@ public class Piece {
         int[][] boardPieces = board.getBoardPieces();
         int result = -1;
         if (this instanceof MegaPiece) {
-            //for (int row = 0; row < boardPieces.length; row++){
-                //if (boardPieces[row][column] != 0 && boardPieces[row][column+1] != 0 && boardPieces[row][column-1] != 0){
-                 //   result = row - 1;
-                //}
-            //}
-            return 0;
+            for (int row = -1; row < boardPieces.length-1; row++){
+                if (boardPieces[row+1][column] != 0 || boardPieces[row+1][column+1] != 0 || boardPieces[row+1][column-1] != 0){
+                    return row;
+                }
+            }
+            return boardPieces.length-1;
         } else {
             for (int row = -1; row < boardPieces.length -1; row++) {
                 if (boardPieces[row+1][column] != 0){
-                    System.out.println("potato");
                     return row;
                 }
             }
             return boardPieces.length-1;
         }
+        //return result;
     }
     public int getCol() {
         return column;

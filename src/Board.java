@@ -8,7 +8,19 @@ public class Board {
 
     public void placePiece(Piece p) { // updates the state of the board with the information of the Piece
         if (p instanceof MegaPiece) {
-            // hmm
+            int column = p.getCol();
+            int row = p.getRow();
+            int color = p.getColor();
+            boardPieces[row][column] = color;
+            boardPieces[row][column-1] = color;
+            boardPieces[row][column+1] = color;
+            boardPieces[row+1][column-1] = color;
+            boardPieces[row+1][column] = color;
+            boardPieces[row+1][column+1] = color;
+            boardPieces[row+2][column-1] = color;
+            boardPieces[row+2][column] = color;
+            boardPieces[row+2][column+1] = color;
+
         } else {
             int column = p.getCol();
             int row = p.getRow();
